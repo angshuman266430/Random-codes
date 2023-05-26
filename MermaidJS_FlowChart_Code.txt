@@ -1,0 +1,26 @@
+graph TD
+
+    A[SFINCS Model Development]
+    B[Model Domain and Grid Resolution]
+    C[Topobathymetry and Bed Roughness]
+    D[Scenario and Boundary Conditions]
+    E[Tidal Conditions]
+    F[Fluvial Conditions]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    D --> F
+
+    G[HEC-RAS Model]
+    G -. "Same spatial extent and resolution" .- B
+    G -. "Topography and bathymetry derived from same DEM" .- C
+    E -. "Water level from ADCIRC simulations" .- D
+    F -. "River flow from Amite, Tickfaw, Natalbany, and Tangipahoa" .- D
+    
+    click B "Define grid resolution and domain, choose subgrid resolution"
+    click C "Derive topobathymetry and bed roughness from the same DEM used for HEC-RAS model, use Manning coefficient for bed roughness"
+    click D "Simulate Hurricane Isaac in Aug 2012 without wind/rainfall"
+    click E "Define tidal boundary conditions based on earlier ADCIRC simulations"
+    click F "Include river discharges from Amite, Tickfaw, Natalbany, and Tangipahoa rivers"
