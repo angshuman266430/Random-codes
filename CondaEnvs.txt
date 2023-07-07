@@ -1,0 +1,6 @@
+conda info --envs
+
+conda activate <environment_name>
+e.g. conda activate base
+
+
